@@ -67,8 +67,14 @@ package.
 See the README of the color scheme (i.e. git package) for information, for
 example: require('color_scheme').setup{}, vim.cmd('color_scheme')
 --]]
+
 require('kanagawa').load()
 --vim.cmd("colorscheme kanagawa")
---require('monokai').setup {}
+require('kanagawa').setup {}
 --vim.cmd("colorscheme rose-pine")
+
+
+
+
+
 

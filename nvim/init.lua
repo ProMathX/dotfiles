@@ -1,16 +1,8 @@
---[[
-
-Neovim init file
-Maintainer: brainf+ck
-Website: https://github.com/brainfucksec/neovim-lua
-
---]]
-
--- Import Lua modules
 require('core/lazy')
 require('core/autocmds')
 require('core/keymaps')
---require('core/colors')
+require('core/colors')
+
 require('plugins/telescope')
 require('core/statusline')
 require('core/options')
@@ -23,6 +15,5 @@ require('plugins/alpha-nvim')
 require('plugins/theme')
 --require('plugins/lualine')
 
-vim.cmd(':colorscheme gruvbox')
-
+--vim.cmd(':colorscheme sorbet')
 
