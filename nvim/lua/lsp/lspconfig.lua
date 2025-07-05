@@ -111,6 +111,20 @@ C-C++         -> clangd
 HTML/CSS/JSON -> vscode-html-languageserver
 JavaScript/TypeScript -> ts_ls
 --]]
+require'lspconfig'.rust_analyzer.setup {
+    settings = {
+        ['rust-analyzer'] = {
+            check = {
+                command = "clippy";
+            },
+            diagnostics = {
+                enable = true;
+            }
+        }
+    }
+}
+
+
 
 -- Define `root_dir` when needed
 -- See: https://github.com/neovim/nvim-lspconfig/issues/320
@@ -122,7 +136,7 @@ end
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches.
 -- Add your language server below:
-local servers = { 'bashls', 'pyright', 'clangd', 'html', 'cssls', 'ts_ls' }
+local servers = { 'bashls', 'pyright', 'clangd', 'html', 'cssls', 'ts_ls', 'rust_analyzer' }
 
 -- Call setup
 for _, lsp in ipairs(servers) do
