@@ -1,0 +1,2 @@
+#!/bin/sh
+scrot -s ~/pix/screenshot/%b%d::%H%M%S.png

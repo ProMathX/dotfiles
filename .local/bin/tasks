@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec ~/dl/taskwarrior-tui/target/release/taskwarrior-tui
