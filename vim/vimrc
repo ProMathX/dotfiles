@@ -56,7 +56,7 @@ au BufNewFile,BufRead *.py,*.java,*.cpp,*.c,*.cs,*.rkt,*.h,*.html,*.md,*.asm,
 set encoding=utf-8
 
 syntax on
-set ai 
+set ai
 highlight Comment ctermfg=green
 " tabs config?
 noremap <leader>1 1gt
@@ -134,7 +134,7 @@ if (has("termguicolors"))
 endif
 
 "set colorscheme
-colorscheme gruvbox 
+colorscheme gruvbox
 
 "Global settings
 set nu rnu " relative line numbering
@@ -154,6 +154,18 @@ set lazyredraw "redraws the screne when it needs to
 set showmatch "highlights matching brackets
 set incsearch "search as characters are entered
 set hlsearch "highlights matching searches
+
+set nocompatible                            " be iMproved
+set nowrap                                  " no text wrap
+set showcmd                                 " show command in status line
+set showmatch                               " show matching brackets
+set showmode                                " show current mode
+set ruler                                   " show the line and column numbers of the cursor
+set list                                    " show problematic characters
+set number                                  " show the line number
+set lazyredraw                              " don't redraw the screen all the time
+
+highlight Comment ctermfg=green
 
 "clears highlights
 nnoremap // :noh<return>
