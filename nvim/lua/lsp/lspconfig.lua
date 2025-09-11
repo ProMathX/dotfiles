@@ -126,6 +126,18 @@ require'lspconfig'.rust_analyzer.setup {
 
 
 
+require'lspconfig'.remark_ls.setup {
+  cmd = { "remark-language-server", "--stdio" },
+  filetypes = {"markdown"},
+  settings = {
+    remark = {
+      requireConfig = true
+    }
+  }
+}
+
+require'lspconfig'.texlab.setup{}
+
 -- Define `root_dir` when needed
 -- See: https://github.com/neovim/nvim-lspconfig/issues/320
 -- This is a workaround, maybe not work with some servers.
@@ -136,7 +148,7 @@ end
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches.
 -- Add your language server below:
-local servers = { 'bashls', 'pyright', 'clangd', 'html', 'cssls', 'ts_ls', 'rust_analyzer' }
+local servers = { 'bashls', 'pyright', 'clangd', 'html', 'cssls', 'ts_ls', 'rust_analyzer'}
 
 -- Call setup
 for _, lsp in ipairs(servers) do
