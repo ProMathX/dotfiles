@@ -1,23 +1,30 @@
+--[[
+
+Neovim init file
+Maintainer: brainf+ck
+Website: https://github.com/brainfucksec/neovim-lua
+
+--]]
+
+-- Import Lua modules
 require('core/lazy')
 require('core/autocmds')
 require('core/keymaps')
 require('core/colors')
-require('plugins/telescope')
 require('core/statusline')
 require('core/options')
-require('lsp/lspconfig')
 require('plugins/nvim-tree')
 require('plugins/indent-blankline')
 require('plugins/nvim-cmp')
 require('plugins/nvim-treesitter')
 require('plugins/alpha-nvim')
-require('plugins/theme')
---require('plugins/lualine')
 
---vim.cmd(':colorscheme sorbet')
--- telescope binds
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+-- Enable LSP
+vim.lsp.enable({
+  'bashls',
+  'pyright',
+  'clangd',
+  'html',
+  'cssls',
+  'ts_ls'
+})
