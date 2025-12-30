@@ -1,141 +1,11 @@
-set rtp+=~/.vim/bundle/Vundle.vim
-call  vundle#begin()
-
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plugin 'junegunn/fzf.vim'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'tpope/vim-surround'
-Plugin 'Raimondi/delimitMate'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'rafi/awesome-vim-colorschemes'
-Plugin 'preservim/nerdcommenter'
-Plugin 'ervandew/supertab'
-Plugin 'scrooloose/nerdtree'
-Plugin 'asmx86_64'
-Plugin 'asmx86'
-Plugin 'tpope/vim-commentary'
-Plugin 'wellle/targets.vim'
-
-call vundle#end()
-
 filetype plugin on
-
-let mapleader = "-"
-let maplocalleader = "\\"
-
-"split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-set splitbelow
-set splitright
-
-" Enable folding
-set foldmethod=indent
-set foldlevel=99
-"Enable folding with the spacebar
-nnoremap <space> za
-
-" open files with ctrl-p
-nnoremap <c-p> :Files<cr>
-
-au BufNewFile,BufRead *.py,*.java,*.cpp,*.c,*.cs,*.rkt,*.h,*.html,*.md,*.asm,
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=120 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix |
-
-set encoding=utf-8
-
 syntax on
 set ai
-highlight Comment ctermfg=green
-" tabs config?
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
-noremap <leader>0 :tablast<cr>
-
-nnoremap <C-h> :tabprevious<CR>
-nnoremap <C-l> :tabnext<CR>
-
-nnoremap <silent> <c-t> :tabnew<cr>
-nnoremap <silent> <c-m> :exe "tabn ".g:lasttab<cr>
-vnoremap <silent> <c-m> :exe "tabn ".g:lasttab<cr>
-
-
-
-" Nerd Tree
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-.> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-
-
-" air-line
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'simple'
-let g:airline#extensions#tabline#enabled = 1
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-
-highlight Comment cterm=italic gui=italic
-
 set laststatus=2
-" set showtabline=2
-
 " true colours
 set background=dark
-set t_Co=256
-
-if (has("nvim"))
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
-
-if (has("termguicolors"))
-  set termguicolors
-endif
-
 "set colorscheme
-colorscheme gruvbox
-
+colorscheme habamax
 "Global settings
 set nu rnu " relative line numbering
 set clipboard=unnamed " public copy/paste register
@@ -154,14 +24,13 @@ set lazyredraw "redraws the screne when it needs to
 set showmatch "highlights matching brackets
 set incsearch "search as characters are entered
 set hlsearch "highlights matching searches
-
 set nocompatible                            " be iMproved
 set nowrap                                  " no text wrap
 set showcmd                                 " show command in status line
 set showmatch                               " show matching brackets
 set showmode                                " show current mode
 set ruler                                   " show the line and column numbers of the cursor
-set list                                    " show problematic characters
+"set list                                    " show problematic characters
 set number                                  " show the line number
 set lazyredraw                              " don't redraw the screen all the time
 
