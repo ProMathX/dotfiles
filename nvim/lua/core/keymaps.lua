@@ -11,8 +11,9 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- Change leader to a comma
-vim.g.mapleader = ','
+vim.g.mapleader =" "
 
+vim.g.maplocalleader = " "
 -----------------------------------------------------------
 -- Neovim shortcuts
 -----------------------------------------------------------
@@ -58,7 +59,7 @@ map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
 
 -- NvimTree
 map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
-map('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
+map('n', '<leader>F', ':NvimTreeRefresh<CR>')       -- refresh
 map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 
 -- Tagbar

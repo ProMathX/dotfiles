@@ -7,17 +7,46 @@ Website: https://github.com/brainfucksec/neovim-lua
 --]]
 
 -- Import Lua modules
+--require('core/lazy')
+--require('core/autocmds')
+--require('core/keymaps')
+--require('core/colors')
+--require('core/statusline')
+--require('core/options')
+--require('plugins/nvim-tree')
+--require('plugins/indent-blankline')
+--require('plugins/nvim-cmp')
+--require('plugins/nvim-treesitter')
+--require('plugins/alpha-nvim')
+--require('plugins/telescope')
+-- Enable LSP
+--vim.lsp.enable({
+--  'bashls',
+--  'pyright',
+--  'clangd',
+--  'html',
+--  'cssls',
+--  'ts_ls'
+--})
+
+
+
+
+
+
+
+require('core/options')
+require('core/keymaps')
 require('core/lazy')
 require('core/autocmds')
-require('core/keymaps')
 require('core/colors')
 require('core/statusline')
-require('core/options')
 require('plugins/nvim-tree')
 require('plugins/indent-blankline')
 require('plugins/nvim-cmp')
 require('plugins/nvim-treesitter')
 require('plugins/alpha-nvim')
+require('plugins/telescope')
 
 -- Enable LSP
 vim.lsp.enable({
@@ -28,3 +57,7 @@ vim.lsp.enable({
   'cssls',
   'ts_ls'
 })
+
+
+
+

@@ -233,7 +233,6 @@ lazy.setup({
     Current available color schemes: onedark (default), kanagawa, monokai-pro, rose-pine
     See: /nvim/lua/core/colors.lua
     --]]
-
     -- OneDark
     {
       'navarasu/onedark.nvim',
@@ -317,6 +316,17 @@ lazy.setup({
         'saadparwaiz1/cmp_luasnip',
       },
     },
+    {
+    'nvim-telescope/telescope.nvim', version = '*',
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        -- optional but recommended
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+      }
+    },
+
+
+
   },
 
 })
